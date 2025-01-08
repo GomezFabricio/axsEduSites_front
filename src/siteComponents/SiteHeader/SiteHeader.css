@@ -1,0 +1,20 @@
+.site-header {
+  background-color: var(--color-primary);
+  color: var(--color-background);
+  padding: 1rem;
+}
+
+.site-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.site-nav a {
+  color: var(--color-background);
+  margin: 0 1rem;
+  text-decoration: none;
+}
+
+.site-nav a:hover {
+  color: var(--color-accent);
+}

@@ -1,0 +1,13 @@
+/* Colores */
+:root {
+  --color-primary: #1E3A8A; /* Azul Oscuro */
+  --color-secondary: #3B82F6; /* Azul Claro */
+  --color-background: #F3F4F6; /* Gris Claro */
+  --color-text: #1F2937; /* Gris Oscuro */
+  --color-accent: #F97316; /* Naranja */
+}
+
+/* Fuentes */
+body {
+  font-family: 'Roboto', sans-serif;
+}
