@@ -1,0 +1,80 @@
+/* Estilos generales */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-text);
+}
+
+h2 {
+  color: var(--color-primary);
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+section {
+  padding: 4rem 2rem;
+  margin: 2rem 0;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+section#home {
+  background-color: var(--color-secondary);
+  color: var(--color-background);
+  padding: 6rem 2rem;
+  text-align: center;
+}
+
+section#about, section#services, section#projects {
+  background-color: var(--color-background);
+}
+
+section#about h2, section#services h2, section#projects h2 {
+  color: var(--color-primary);
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  max-width: 350px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+  max-width: 100%;
+  border-radius: 8px;
+  margin-top: 1rem;
+}
+
+.card h3 {
+  color: var(--color-primary);
+  font-size: 1.5rem;
+  margin: 1rem 0;
+}
+
+.card p {
+  color: var(--color-text);
+  margin: 1rem 0;
+  font-size: 1rem;
+  line-height: 1.5;
+}
