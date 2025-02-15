@@ -8,9 +8,8 @@ const Section = ({ secciones }) => {
       <div className="container">
         {secciones.map((seccion) => (
           <div key={seccion._id}>
-            <h3>{seccion.nombre}</h3>
             {Object.entries(seccion.contenido).map(([key, value]) => (
-              <p key={key}><strong>{key}:</strong> {value}</p>
+              key === 'titulo' ? <h3 key={key}>{value}</h3> : <p key={key}>{value}</p>
             ))}
           </div>
         ))}

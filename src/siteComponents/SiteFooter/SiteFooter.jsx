@@ -5,7 +5,7 @@ const SiteFooter = () => {
   return (
     <footer className="site-footer">
       <div className="footer-content">
-        <p>&copy; 2024 aXsEduSites. Todos los derechos reservados.</p>
+        <p>Todos los derechos reservados.</p>
         <nav className="footer-nav">
           <a href="/privacy">Política de Privacidad</a>
           <a href="/terms">Términos de Servicio</a>

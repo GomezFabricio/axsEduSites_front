@@ -1,20 +1,111 @@
 .site-header {
-  background-color: var(--color-primary);
-  color: var(--color-background);
-  padding: 1rem;
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .site-title {
-  font-size: 1.5rem;
+  font-size: 3rem;
   font-weight: 700;
+  color: var(--color-primary);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  margin-bottom: 1.5rem; /* Espacio más grande entre el título y el nav */
+}
+
+.site-nav {
+  background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  color: var(--color-background);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: max-height 0.5s ease, padding 0.5s ease; /* Animación suave */
+  max-height: 0; /* Ocultar el nav por defecto */
+  overflow: hidden; /* Ocultar el contenido desbordado */
+  padding: 0; /* Ocultar el padding vertical por defecto */
+  border-radius: 5px;
+}
+
+.site-nav.show {
+  max-height: 500px; /* Mostrar el nav cuando se despliega */
+  width: 100%;
 }
 
 .site-nav a {
   color: var(--color-background);
-  margin: 0 1rem;
   text-decoration: none;
+  font-size: 1.2rem;
+  transition: color 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
+  padding: 1rem;
 }
 
 .site-nav a:hover {
   color: var(--color-accent);
+  transform: scale(1.1);
+  background-color: rgba(255, 255, 255, 0.1); /* Background de hover */
+}
+
+.site-nav a.active {
+  border-bottom: 2px solid var(--color-accent);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .site-title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .site-nav {
+    flex-direction: column;
+  }
+
+  .site-nav a {
+    font-size: 1rem;
+    width: 100%; /* Hacer que los enlaces ocupen todo el ancho */
+    text-align: center; /* Centrar el texto de los enlaces */
+    padding: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Línea entre los enlaces */
+  }
+
+  .menu-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: var(--color-background);
+    background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-secondary) 100%); /* Background para la palabra Menu */
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 60%; /* Hacer que el menú tenga el mismo ancho que el nav */
+    margin-bottom: 1rem; /* Espacio más grande entre el nav y el menú */
+  }
+
+  .menu-toggle svg {
+    margin-left: 0.5rem;
+    transition: transform 0.3s ease;
+  }
+
+  .menu-toggle.show svg {
+    transform: rotate(180deg); /* Rotar el icono cuando se despliega */
+  }
+}
+
+@media (min-width: 769px) {
+  .menu-toggle {
+    display: none; /* Ocultar el texto Menu en resoluciones superiores */
+  }
+
+  .site-nav {
+    display: flex; /* Mostrar el nav por defecto en resoluciones superiores */
+    max-height: none; /* Eliminar la restricción de altura */
+  }
 }

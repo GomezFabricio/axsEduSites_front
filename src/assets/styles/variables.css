@@ -1,10 +1,10 @@
 /* Colores */
 :root {
-  --color-primary: #1E3A8A; /* Azul Oscuro */
-  --color-secondary: #3B82F6; /* Azul Claro */
-  --color-background: #F3F4F6; /* Gris Claro */
-  --color-text: #1F2937; /* Gris Oscuro */
-  --color-accent: #F97316; /* Naranja */
+  --color-primary: #4663e5; /* Azul Claro */
+  --color-secondary: #81c3f8; /* Azul Más Claro */
+  --color-background: #E0E7FF; /* Azul Muy Claro */
+  --color-text: #374151; /* Gris Medio */
+  --color-accent: #FBBF24; /* Amarillo */
 }
 
 /* Fuentes */

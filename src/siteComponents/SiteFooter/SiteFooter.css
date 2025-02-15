@@ -1,5 +1,5 @@
 .site-footer {
-  background-color: var(--color-primary);
+  background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-secondary) 100%);
   color: var(--color-background);
   padding: 1rem;
   text-align: center;

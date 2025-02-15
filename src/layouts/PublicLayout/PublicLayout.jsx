@@ -1,12 +1,13 @@
 import React from 'react';
-import SiteHeader from '../../siteComponents/siteHeader/SiteHeader';
+import SiteHeader from '../../siteComponents/SiteHeader/SiteHeader';
 import SiteFooter from '../../siteComponents/SiteFooter/SiteFooter';
+import './PublicLayout.css';
 
 const PublicLayout = ({ children }) => {
   return (
-    <div>
+    <div className="layout-container">
       <SiteHeader />
-      <main>{children}</main>
+      <main className="layout-content">{children}</main>
       <SiteFooter />
     </div>
   );
