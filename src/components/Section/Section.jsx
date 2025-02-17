@@ -4,7 +4,7 @@ import './Section.css';
 
 const Section = ({ secciones }) => {
   return (
-    <section id="home">
+    <section id="home" className="section">
       <div className="container">
         {secciones.map((seccion) => (
           <div key={seccion._id}>
@@ -13,7 +13,7 @@ const Section = ({ secciones }) => {
             ))}
           </div>
         ))}
-      </div>
+      </div>  
     </section>
   );
 };

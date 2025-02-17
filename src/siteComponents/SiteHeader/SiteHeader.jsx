@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './SiteHeader.css';
 import { FaChevronDown } from 'react-icons/fa';
+import graduadoImg from '../../assets/img/graduacion.png';
 
 const SiteHeader = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -12,7 +13,10 @@ const SiteHeader = () => {
 
   return (
     <header className="site-header">
-      <h1 className="site-title">aXsEduSites</h1>
+      <div className="site-title">
+        aXsEduSites
+        <img src={graduadoImg} alt="Graduado" className="site-title-img" />
+      </div>
       <div className={`menu-toggle ${menuOpen ? 'show' : ''}`} onClick={toggleMenu}>
         Menu <FaChevronDown />
       </div>

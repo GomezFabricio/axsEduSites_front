@@ -15,26 +15,35 @@
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
   text-align: center;
   margin-bottom: 1.5rem; /* Espacio más grande entre el título y el nav */
+  display: flex;
+  align-items: center;
+}
+
+.site-title-img {
+  width: 80px;
+  height: 80px;
 }
 
 .site-nav {
   background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-secondary) 100%);
   color: var(--color-background);
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
-  width: 100%;
+  width: 70%;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: max-height 0.5s ease, padding 0.5s ease; /* Animación suave */
   max-height: 0; /* Ocultar el nav por defecto */
   overflow: hidden; /* Ocultar el contenido desbordado */
   padding: 0; /* Ocultar el padding vertical por defecto */
   border-radius: 5px;
+  border-bottom-left-radius: 0; 
+  border-bottom-right-radius: 0;/* Redondear la esquina inferior izquierda */
 }
 
 .site-nav.show {
   max-height: 500px; /* Mostrar el nav cuando se despliega */
-  width: 100%;
+  width: 70%;
 }
 
 .site-nav a {
@@ -42,13 +51,12 @@
   text-decoration: none;
   font-size: 1.2rem;
   transition: color 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
-  padding: 1rem;
+  padding: 0.5rem;
 }
 
 .site-nav a:hover {
   color: var(--color-accent);
   transform: scale(1.1);
-  background-color: rgba(255, 255, 255, 0.1); /* Background de hover */
 }
 
 .site-nav a.active {
@@ -85,7 +93,7 @@
     padding: 0.5rem 1rem;
     border-radius: 5px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 60%; /* Hacer que el menú tenga el mismo ancho que el nav */
+    width: 40%; /* Hacer que el menú tenga el mismo ancho que el nav */
     margin-bottom: 1rem; /* Espacio más grande entre el nav y el menú */
   }
 
@@ -107,5 +115,15 @@
   .site-nav {
     display: flex; /* Mostrar el nav por defecto en resoluciones superiores */
     max-height: none; /* Eliminar la restricción de altura */
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1280px) {
+  .site-nav {
+    width: 90%; /* Aumentar el ancho del nav al 80% en tabletas */
+  }
+
+  .menu-toggle {
+    display: none; /* Ocultar el botón de menú en tabletas */
   }
 }
