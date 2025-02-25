@@ -1,30 +1,44 @@
 import React, { useEffect, useState } from 'react';
-import { getSecciones } from '../../api/sectionApi';
-import Section from '../../components/Section/Section';
+import { getPageContent } from '../../api/pageContentApi';
+import Seccion from '../../components/Seccion/Seccion';
+import Equipo from '../../components/Equipo/Equipo';
+import Servicios from '../../components/Servicios/Servicios';
+import TrabajosRealizados from '../../components/TrabajosRealizados/TrabajosRealizados';
 import './Home.css';
 
 const Home = () => {
-  const [secciones, setSecciones] = useState([]);
+  const [pageContent, setPageContent] = useState([]);
 
   useEffect(() => {
-    const fetchSecciones = async () => {
+    const fetchPageContent = async () => {
       try {
-        const data = await getSecciones();
-        console.log('Secciones:', data);
-        setSecciones(data);
+        const data = await getPageContent();
+        console.log('Page Content:', data);
+        setPageContent(data);
       } catch (error) {
-        console.error('Error al obtener las secciones:', error);
+        console.error('Error al obtener el contenido de la página:', error);
       }
     };
 
-    fetchSecciones();
+    fetchPageContent();
   }, []);
 
   return (
     <div className="home-container">
-      <h2 className="home-title">Potencia tu presencia online</h2>
+      <h2 className="home-title">Soluciones web para instituciones educativas</h2>
       <div className="section-container">
-        {secciones.length > 0 && <Section secciones={secciones} />}
+        {pageContent.map((content) => {
+          if (content.type === 'section') {
+            return <Seccion key={content.id} secciones={[content]} />;
+          } else if (content.type === 'services') {
+            return <Servicios key={content.id} servicios={content.items} />;
+          } else if (content.type === 'projects') {
+            return <TrabajosRealizados key={content.id} trabajos={content.items} />;
+          } else if (content.type === 'equipo') {
+            return <Equipo key={content.id} equipo={content.items} />;
+          }
+          return null;
+        })}
       </div>
     </div>
   );

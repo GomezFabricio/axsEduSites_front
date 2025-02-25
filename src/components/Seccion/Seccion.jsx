@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './Section.css';
+import './Seccion.css';
 
-const Section = ({ secciones }) => {
+const Seccion = ({ secciones }) => {
   return (
-    <section id="home" className="section">
+    <section className="seccion">
       <div className="container">
         {secciones.map((seccion) => (
           <div key={seccion._id}>
@@ -18,7 +18,7 @@ const Section = ({ secciones }) => {
   );
 };
 
-Section.propTypes = {
+Seccion.propTypes = {
   secciones: PropTypes.arrayOf(
     PropTypes.shape({
       _id: PropTypes.string.isRequired,
@@ -28,4 +28,4 @@ Section.propTypes = {
   ).isRequired,
 };
 
-export default Section;
+export default Seccion;

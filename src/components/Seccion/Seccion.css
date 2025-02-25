@@ -1,0 +1,48 @@
+.seccion {
+  padding: 2rem 0;
+}
+
+.seccion .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center; /* Centrar los elementos dentro del contenedor */
+}
+
+.seccion .container > div {
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  flex: 1 1 calc(33.333% - 2rem);
+  box-sizing: border-box;
+  text-align: center; /* Centrar el texto dentro de cada sección */
+}
+
+
+.seccion h3 {
+  font-size: 2rem;
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+}
+
+.seccion p {
+  font-size: 1rem;
+  color: #666;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .seccion .container > div {
+    flex: 1 1 calc(50% - 1rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .seccion .container > div {
+    flex: 1 1 100%;
+  }
+}
