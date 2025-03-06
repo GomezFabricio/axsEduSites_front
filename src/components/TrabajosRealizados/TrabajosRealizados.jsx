@@ -12,6 +12,9 @@ const TrabajosRealizados = ({ trabajos }) => {
             <div key={trabajo._id} className="trabajo-item">
               <h4>{trabajo.titulo}</h4>
               <p>{trabajo.descripcion}</p>
+              {trabajo.imagenes.map((imagen, index) => (
+                <img key={index} src={imagen} alt={`Trabajo ${index + 1}`} className="trabajo-imagen" />
+              ))}
             </div>
           ))}
         </div>
@@ -26,6 +29,7 @@ TrabajosRealizados.propTypes = {
       _id: PropTypes.string.isRequired,
       titulo: PropTypes.string.isRequired,
       descripcion: PropTypes.string.isRequired,
+      imagenes: PropTypes.arrayOf(PropTypes.string).isRequired,
     })
   ).isRequired,
 };
